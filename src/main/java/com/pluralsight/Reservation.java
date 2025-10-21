@@ -6,15 +6,35 @@ public class Reservation {
     private int numberOfNights;
     private boolean isWeekend;
 
+    public Reservation(String roomType, int numberOfNights, boolean isWeekend) {
+        this.roomType = roomType.trim(); //Either "King" or "Double"
+
+        if (roomType.toLowerCase().equals("king")) {
+            this.price = 139.00;
+        } else {
+            this.price = 124.00;
+        }
+
+        this.numberOfNights = numberOfNights;
+        this.isWeekend = isWeekend;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
     public String getRoomType() {
         return roomType;
     }
+
     public void setRoomType(String roomType) {
         this.roomType = roomType;
-    }
 
-    public double getReservationPrice() {
-        return price;
+        if (roomType.toLowerCase().equals("king")) {
+            this.price = 139.00;
+        } else  {
+            this.price = 124.00;
+        }
     }
 
     public int getNumberOfNights() {
@@ -30,30 +50,18 @@ public class Reservation {
     }
 
     public void setWeekend(boolean weekend) {
-        this.isWeekend = weekend;
-    }
-    public Reservation(String roomType, int numberOfNights, boolean weekend) {
-        this.roomType = roomType;
-        switch (roomType){
-            case "king":
-                this.price = 139;
-                break;
-            case "double":
-                this.price = 124;
-                break;
-        }
-       this.numberOfNights = numberOfNights;
-        this.isWeekend = isWeekend;
+        isWeekend = weekend;
     }
 
     public double getReservationTotal() {
-        double reservationTotal = price*numberOfNights;
-        if (isWeekend()){
-            reservationTotal *= 1.1;
-        }
-        return reservationTotal;
-    }
+        double upCharge = this.price; //upCharge stays the same when it's not a weekend reservation
 
+        if (this.isWeekend) {
+            upCharge *= 1.1;
+        }
+
+        return this.numberOfNights * upCharge;
+    }
 }
 
 
