@@ -1,22 +1,24 @@
 package com.pluralsight;
 
-// Private encapsulated data
+// Private encapsulated data or Instance Variables
 public class Room {
     private int numberOfBeds;
     private double price;
-    private boolean occupied;
-    private boolean dirty;
+    private boolean occupied, dirty;
 
     // Constructor
+    //Parameters or variables/info needed for building our "room" class
     public Room(int numberOfBeds, double price, boolean occupied, boolean dirty) {
-        this.numberOfBeds = numberOfBeds;
+       //The instance variable belongs to THIS specific Room object
+        this.numberOfBeds = numberOfBeds; // The parameter is the value passed into the constructor
         this.price = price;
-        this.occupied = false;
-        this.dirty = false;
+        this.occupied = occupied;
+        this.dirty = dirty;
         }
 
+        // Getters : provides controlled read access.
     public int getNumberOfBeds() {
-        return numberOfBeds;
+        return numberOfBeds; // Sends back the value of variable called
     }
 
     public double getPrice() {
