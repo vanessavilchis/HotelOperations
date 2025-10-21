@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalDateTime;
+
 public class Employee {
     private int employeeId;
     private String name, department;
@@ -36,9 +38,7 @@ public class Employee {
 
     public double getTotalPay() {
         double regularPay = this.payRate * this.getRegularHours();
-
         double overtimePay = (this.payRate * 1.5) * this.getOvertimeHours();
-
         return regularPay + overtimePay;
     }
 
@@ -58,13 +58,32 @@ public class Employee {
         }
     }
     public void punchIn(double time) {
-        this.punchInTime = time;  // Save the start time
+        this.punchInTime = time;
+
     }
 
     public void punchOut(double time) {
         double hoursThisShift = time - this.punchInTime;
-
         this.hoursWorked += hoursThisShift;
         this.punchInTime = 0.0;
+    }
+
+    public void punchIn(){
+        LocalDateTime now = LocalDateTime.now();
+        int hour = now.getHour();
+        int minute = now.getMinute();
+
+        double time = hour + (minute/60.0);
+        this.punchIn(time);
+    }
+    public void punchOut(){
+        LocalDateTime now = LocalDateTime.now();
+
+        int hour = now.getHour();
+        int minute = now.getMinute();
+
+        double time = hour + (minute/60.0);
+
+        this.punchOut(time);
     }
 }
