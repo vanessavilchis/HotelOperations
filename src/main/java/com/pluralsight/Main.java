@@ -8,7 +8,7 @@ public class Main {
         System.out.println("   Price: $" + room1.getPrice());
         System.out.println("   Occupied: " + room1.isOccupied());
         System.out.println("   Dirty: " + room1.isDirty());
-        System.out.println("   Available: " + room1.isAvailable() + "Available!");
+        System.out.println("   Available: " + room1.isAvailable());
         System.out.println();
 
         //139 king
