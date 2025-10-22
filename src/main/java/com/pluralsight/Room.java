@@ -16,6 +16,9 @@ public class Room {
         this.dirty = dirty;
     }
 
+    public Room(int numberOfBeds, int price) {
+    }
+
     // Getters : provides controlled read access.
     public int getNumberOfBeds() {
         return numberOfBeds; // Sends back the value of variable called

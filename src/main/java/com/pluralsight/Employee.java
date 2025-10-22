@@ -16,6 +16,10 @@ public class Employee {
         this.hoursWorked = hoursWorked;
         this.punchInTime = 0.0;
     }
+
+    public Employee(String number, String testName, String test, int payRate) {
+    }
+
     public int getEmployeeId() {
         return employeeId;
     }
@@ -85,5 +89,11 @@ public class Employee {
         double time = hour + (minute/60.0);
 
         this.punchOut(time);
+    }
+
+    public int getClockIn() {
+    }
+
+    public void clockInOut() {
     }
 }
