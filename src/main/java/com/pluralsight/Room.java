@@ -45,7 +45,7 @@ public class Room {
     }
 
     public void cleanRoom() {
-        this.dirty = false;     // Room is now clean
+        this.dirty = false;
 
     }
 }

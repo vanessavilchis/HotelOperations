@@ -21,5 +21,20 @@ public class Main {
         System.out.println("   Initial Hours: " + emp.getHoursWorked());
         System.out.println();
 
+
+        Reservation res1 = new Reservation("king", 3, false);
+        System.out.println("   Room Type: " + res1.getRoomType());
+        System.out.println("   Nights: " + res1.getNumberOfNights());
+        System.out.println("   Weekend: " + res1.isWeekend());
+        System.out.println("   Price/Night: $" + res1.getPrice() + " (King weekday)");
+        System.out.println("   Total: $" + res1.getReservationTotal());
+
+        Reservation res2 = new Reservation("double", 2, true);
+        System.out.println("   Room Type: " + res2.getRoomType());
+        System.out.println("   Nights: " + res2.getNumberOfNights());
+        System.out.println("   Weekend: " + res2.isWeekend());
+        System.out.println("   Price/Night: $" + res2.getPrice() + " (Double weekend +10%)");
+        System.out.println("   Total: $" + res2.getReservationTotal());
+
     }
 }
